@@ -1,7 +1,9 @@
 ﻿<?php
 
+require_once __DIR__ . '/config/config.php';
+require_once __DIR__ . '/src/Validation/NotfisValidator.php';
 require_once __DIR__ . '/src/SswFacade.php';
-require_once __DIR__ .'/config/config.php';
+
 
 
 // Payload de exemplo para envio de notas fiscais
@@ -52,7 +54,7 @@ try {
     );
 
     $token = $sswFacade->gerarToken();
-    echo "Token gerado com sucesso: {$token}\n\n";
+    echo "Token gerado com sucesso: $token\n\n";
 
     try {
         validarPayloadNotFis($payloadLote);
