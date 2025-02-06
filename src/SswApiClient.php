@@ -32,7 +32,7 @@ class SswApiClient
             'cnpj_edi' => $this->cnpj_edi
         ];
 
-        $response = $this->sendRequest($this->api_token_url, $payload);
+        $response = $this->sendCurl($this->api_token_url, $payload);
 
         if (!isset($response['sucess']) || $response['sucess'] !== true) {
             $msgErro = isset($response['message']) ? $response['message'] : 'Erro desconhecido ao gerar token.';
